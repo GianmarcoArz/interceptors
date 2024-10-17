@@ -11,6 +11,7 @@ export class HomeComponent {
   constructor(private photoSvc: PostService) {}
 
   arrayPhoto: iPhoto[] = [];
+  arraypref: iPhoto[] = [];
 
   ngOnInit() {
     this.photoSvc.getAllPhoto().subscribe((p) => (this.arrayPhoto = p));
@@ -19,5 +20,10 @@ export class HomeComponent {
     this.photoSvc.deletePhoto(id).subscribe(() => {
       this.arrayPhoto = this.arrayPhoto.filter((p) => p.id != id);
     });
+  }
+
+  likePhoto(like: iPhoto) {
+    this.arraypref.push(like);
+    console.log(this.arraypref);
   }
 }
