@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <h1 class="text-center">TEST</h1>
+  <div class="row">
+    <div class="card" *ngFor="let photo of arrayPhoto">
+      <img src="{{ photo.thumbnailUrl }}" class="card-img-top" alt="" />
+      <div class="card-body">
+        <h5 class="card-title">{{ photo.title }}</h5>
+        <p class="card-text"></p>
+        <button (click)="deletePhoto(photo.id)" class="btn btn-primary">
+          elimina Photo
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
